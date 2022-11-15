@@ -1,3 +1,4 @@
+# Calculus I section 5.1.
 # Our given function, f(x).
 def f(x):
     return 1/(x * (x - 1))
@@ -9,9 +10,9 @@ startCursor = 2
 # The end of the integral.
 endCursor = 5
 # The width of each Reimann rectangle.
-width = abs(endCursor - startCursor) / R
+width = (endCursor - startCursor) / R
 # The point at which each Reimann rectangle is calculated.
-origin = 'l'
+origin = 'r'
 cursor = 0
 if origin == 'm':
     cursor = startCursor + (width / 2)
@@ -34,5 +35,5 @@ for i in range(R):
     cursor += width
 
 # Apply the width of each rectangle. Allows for reversed integrals.
-sum *= endCursor - startCursor
+sum *= (endCursor - startCursor) / R
 print(f'\nSum:          {sum:.5}')
